@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class='w-full h-full'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/style.css">
-    <title></title>
+    <title>Translate Sandi</title>
 </head>
-<body>
-    <p class='text-red-800'>Hello There</p>
+<body class='font-Montserrat bg-white flex flex-col justify-center items-center mx-6 my-8 font-bold'>
+    <h1 class='font-black text-center text-black text-3xl mb-10'>Translate Sandi</h1>
+
+    <!-- Jenis Sandi dropdown -->
+    <div class='w-full mb-2 text-xs w-full'>
+        <button class='bg-black text-left text-white p-2 peer m-0'>
+            Sandi AN <i class="fas fa-chevron-down ml-1"></i>
+        </button>
+        <div class='hidden peer-focus:block'>
+            <a href="" class='absolute p-2 bg-grey text-black w-1/4 focus:text-white focus:bg-black'>Sandi AZ</a>
+        </div>
+    </div>
+
+    <!-- Jenis Sandi Non Dropdown -->
+    <div class="hidden">
+
+
+    </div>
+
+    <!-- User Input & Output -->
+    <div class='flex flex-col justify-center items-center w-full h-96 text-black'>
+        <!-- User Input -->
+        <textarea placeholder="Masukan kata" rows="10" class='overflow-y-auto p-2 w-full border-2 m-0 resize-none border-black-less focus:border-black-less focus:outline-none text-md text-black h-1/2'></textarea>
+        
+        <!-- Output -->
+        <div class='h-1/2 w-full bg-grey border-black-less text-md border-2 mt-2 p-2'>
+            <p class='overflow-y-auto h-3/4 w-full'>Hasil</p>
+            <button class='float-right text-right text-xl px-2 py-0.5 mt-2 focus:bg-black-less focus:text-white hover:text-white hover:bg-black-less'><i class="far fa-clipboard"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <a href="https://github.com" class='text-black text-md mt-16 mb-10'>Source Code</a>
 </body>
 </html>
