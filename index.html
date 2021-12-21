@@ -4,42 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./dist/style.css">
     <title>Translate Sandi</title>
 </head>
-<body class='font-Montserrat bg-white flex flex-col justify-center items-center mx-6 my-8 font-bold'>
-    <h1 class='font-black text-center text-black text-3xl md:text-4xl mb-10'>Translate Sandi</h1>
+<body class='flex-center-col mx-6 my-8 bg-white font-Montserrat font-bold'>
+    <!-- Judul -->
+    <h1 class='mb-10 font-black text-center text-black text-3xl md:text-4xl'>Translate Sandi</h1>
 
     <!-- "Jenis Sandi" dropdown style -->
-    <div class='w-full mb-2 text-xs md:text-sm w-full lg:hidden'>
-        <button class='bg-black text-left text-white p-2 peer m-0'>
+    <div class='lg:hidden w-full mb-2 text-xs md:text-sm'>
+        <button class='m-0 p-2 text-left dark-jenis-btn peer'>
             Sandi AN <i class="fas fa-chevron-down ml-1"></i>
         </button>
         <div class='hidden peer-focus:block'>
-            <a href="" class='absolute p-2 bg-grey text-black w-1/4 focus:text-white focus:bg-black'>Sandi AZ</a>
+            <a href="" class='absolute w-1/4 p-2 bg-grey text-black focus:dark-jenis-btn'>Sandi AZ</a>
         </div>
     </div>
 
     <!-- "Jenis Sandi" Non Dropdown style -->
-    <div class="hidden lg:block w-full float-left text-sm m-2">
-        <button class='bg-white text-black p-2 hover:bg-black hover:text-white focus:bg-black focus:text-white m-0'>Sandi AN</button>
-        <button class='bg-white text-black p-2 hover:bg-black hover:text-white focus:bg-black focus:text-white m-0'>Sandi AZ</button>
+    <div class="hidden lg:block w-full m-2 float-left text-sm">
+        <button class='general-jenis-btn'>Sandi AN</button>
+        <button class='general-jenis-btn'>Sandi AZ</button>
     </div>
 
     <!-- User Input & Output -->
-    <div class='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-2 w-full h-96 md:h-96 lg:h-72 text-black text-md md:text-lg'>
+    <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96 text-black text-md md:text-lg'>
         <!-- User Input -->
-        <textarea placeholder="Masukan kata" rows="10" class='overflow-y-auto p-2 w-full border-2 m-0 resize-none border-black-less focus:border-black-less focus:outline-none text-inherit text-black h-1/2 lg:h-3/4'></textarea>
+        <textarea placeholder="Masukan kata" rows="10" 
+            class='w-full p-2 m-0 h-1/2 lg:h-3/4 overflow-y-auto resize-none focus:outline-none 
+            border-template text-inherit'></textarea>
         
         <!-- Output -->
-        <div class='h-1/2 lg:h-3/4 w-full bg-grey border-black-less border-2 p-2'>
-            <p class='overflow-y-auto h-3/4 lg:h-4/5 w-full'>Hasil</p>
-            <button class='float-right text-right text-xl md:text-2xl px-2 py-0.5 mt-2 lg:mt-1 focus:bg-black-less focus:text-white hover:text-white hover:bg-black-less'><i class="far fa-clipboard"></i></button>
+        <div class='w-full h-1/2 lg:h-3/4 p-2 bg-grey border-template'>
+            <p class='w-full h-3/4 lg:h-4/5 overflow-y-auto'>Hasil</p>
+            <button class='mt-2 lg:mt-1 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-active'>
+                <i class="far fa-clipboard"></i>
+            </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <a href="https://github.com" class='text-black text-md mt-16 md:mt-32 lg:mt-16 mb-10'>Source Code</a>
+    <a href="https://github.com" class='mt-16 md:mt-32 lg:mt-16 mb-10 text-black text-md'>Source Code</a>
 </body>
 </html>

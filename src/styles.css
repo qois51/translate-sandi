@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .flex-center-col {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .dark-jenis-btn {
+        @apply bg-black text-white
+    }
+
+    .general-jenis-btn {
+        @apply m-0 p-2 bg-white text-black;
+        @apply hover:bg-black hover:text-white focus:bg-black focus:text-white;
+    }
+
+    .border-template {
+        @apply border-2 border-black-less;
+    }
+
+    .clipboard-active {
+        @apply focus:bg-black-less focus:text-white hover:text-white hover:bg-black-less;
+    }
+}
