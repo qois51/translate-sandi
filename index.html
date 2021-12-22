@@ -41,8 +41,9 @@
         
         <!-- Output -->
         <div class='w-full h-1/2 lg:h-3/4 p-2 bg-grey border-template'>
-            <p class='w-full h-3/4 lg:h-4/5 overflow-y-auto'>Hasil</p>
-            <button class='mt-2 lg:mt-1 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-active'>
+            <p id='result' class='w-full h-3/4 lg:h-4/5 overflow-y-auto'>Hasil</p>
+            <button id='clip-btn' onclick='clipboardAction();' 
+                class='mt-2 lg:mt-1 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-unactive'>
                 <i class="far fa-clipboard"></i>
             </button>
         </div>

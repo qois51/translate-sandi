@@ -77,3 +77,22 @@ window.onclick = function(event) {
         document.getElementById('dropdown-list').classList.add('hidden');        
     }
 }
+
+function clipboardAction() {
+    let clipboard = document.getElementById('clip-btn').classList;
+    clipboard.add('clipboard-active');
+    clipboard.remove('clipboard-unactive');
+
+    let result = document.getElementById('result').innerHTML;
+    let body = document.body;
+
+    // Workaround untuk menyalin ke user clipboard
+    // Membuat textarea sementara supaya bisa disalin
+    let dummyarea = document.createElement('textarea');
+    body.appendChild(dummyarea);
+    dummyarea.value = result;
+    dummyarea.select();
+
+    document.execCommand('copy');
+    body.removeChild(dummyarea);
+}

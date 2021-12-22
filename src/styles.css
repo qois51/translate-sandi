@@ -27,7 +27,11 @@
         @apply border-2 border-black-less;
     }
 
+    .clipboard-unactive {
+        @apply text-black hover:text-white focus:bg-black-less focus:text-white;
+    }
+
     .clipboard-active {
-        @apply focus:bg-black-less focus:text-white hover:text-white hover:bg-black-less;
+        @apply bg-black-less text-white;
     }
 }
