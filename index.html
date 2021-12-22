@@ -35,12 +35,12 @@
     <!-- User Input & Output -->
     <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96 text-black text-md md:text-lg'>
         <!-- User Input -->
-        <textarea placeholder="Masukan kata" rows="10" 
+        <textarea id='input' oninput='prepareInput();' spellcheck=false autocomplete='off' placeholder="Masukan kata" rows="10" 
             class='w-full p-2 m-0 h-1/2 lg:h-3/4 overflow-y-auto resize-none focus:outline-none 
             border-template text-inherit'></textarea>
         
         <!-- Output -->
-        <div class='w-full h-1/2 lg:h-3/4 p-2 bg-grey border-template'>
+        <div id='output' class='invisible w-full h-1/2 lg:h-3/4 p-2 bg-grey border-template'>
             <p id='result' class='w-full h-3/4 lg:h-4/5 overflow-y-auto'>Hasil</p>
             <button id='clip-btn' onclick='clipboardAction();' 
                 class='mt-2 lg:mt-1 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-unactive'>
