@@ -10,12 +10,17 @@
     }
 
     .dark-jenis-btn {
-        @apply bg-black text-white
+        @apply bg-black text-white;
+        @apply hover:bg-black-less hover:text-white;
     }
 
     .general-jenis-btn {
-        @apply m-0 p-2 bg-white text-black;
-        @apply hover:bg-black hover:text-white focus:bg-black focus:text-white;
+        @apply m-0 p-2;
+    }
+
+    .white-jenis-btn {
+        @apply bg-white text-black;
+        @apply hover:bg-black-less hover:text-white;
     }
 
     .border-template {

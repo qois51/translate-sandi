@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" 
+        integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg=="   
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./dist/style.css">
     <title>Translate Sandi</title>
 </head>
-<body class='flex-center-col mx-6 my-8 bg-white font-Montserrat font-bold'>
+<body onload="setSelectedSandi();" class='flex-center-col mx-6 my-8 bg-white font-Montserrat font-bold'>
     <!-- Judul -->
     <h1 class='mb-10 font-black text-center text-black text-3xl md:text-4xl'>Translate Sandi</h1>
 
     <!-- "Jenis Sandi" dropdown style -->
     <div class='lg:hidden w-full mb-2 text-xs md:text-sm'>
-        <button class='m-0 p-2 text-left dark-jenis-btn peer'>
+        <button id='drpmain' onclick='showDropdown();' class='m-0 p-2 text-left dark-jenis-btn dropbtn'>
             Sandi AN <i class="fas fa-chevron-down ml-1"></i>
         </button>
-        <div class='hidden peer-focus:block'>
-            <a href="" class='absolute w-1/4 p-2 bg-grey text-black focus:dark-jenis-btn'>Sandi AZ</a>
+
+        <div id='dropdown-list' class='hidden'>
+            <a href="#" id='drplist' onclick="changeSelectedSandi(this.id); return false;" 
+                class='absolute w-1/4 p-2 bg-grey text-black focus:dark-jenis-btn general-jenis-btn'>Sandi AZ</a>
         </div>
     </div>
 
     <!-- "Jenis Sandi" Non Dropdown style -->
     <div class="hidden lg:block w-full m-2 float-left text-sm">
-        <button class='general-jenis-btn'>Sandi AN</button>
-        <button class='general-jenis-btn'>Sandi AZ</button>
+        <button id='an' onclick='changeSelectedSandi(this.id);' class='general-jenis-btn'>Sandi AN</button>
+        <button id='az' onclick='changeSelectedSandi(this.id);' class='general-jenis-btn'>Sandi AZ</button>
     </div>
 
     <!-- User Input & Output -->
@@ -46,5 +50,8 @@
 
     <!-- Footer -->
     <a href="https://github.com" class='mt-16 md:mt-32 lg:mt-16 mb-10 text-black text-md'>Source Code</a>
+
+    <!-- Source Javascript -->
+    <script src="./src/main.js"></script> 
 </body>
 </html>
