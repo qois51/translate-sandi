@@ -223,13 +223,14 @@ function postProses() {
 
     // Menampilkan bagian output bila terdapat input
     if (result != "") {
-        output.remove('invisible');
-        output.add('visible');
+        output.add('visible', 'bg-grey');
+        output.remove('invisible', 'bg-white');
+        document.getElementById('clip-btn').classList.add('visible');
+        document.getElementById('clip-btn').classList.remove('invisible');
+        document.getElementById('result').innerHTML = result;
     } else {
-        output.add('invisible');
-        output.remove('visible');
+        output.add('invisible', 'bg-white');
+        output.remove('visible', 'bg-grey');
+        document.getElementById('result').innerHTML = 'Hasil';
     }
-
-    // Tampilkan hasil
-    document.getElementById('result').innerHTML = result;
 }

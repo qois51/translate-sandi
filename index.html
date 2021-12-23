@@ -8,9 +8,10 @@
         integrity="sha512-4wFGk961cJS2gpSfzy1vU+R8Q93foZOoGgfEDetiClOqNvggdtnRpdCsAgfm8VU9mKkv2unla8RBYwA6hoFwqg=="   
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./dist/style.css">
-    <title>Translate Sandi</title>
+    <title>Translate Sandi AN dan Sandi AZ</title>
 </head>
-<body onload="setSelectedSandi();" class='flex-center-col mx-6 my-8 bg-white font-Montserrat font-bold'>
+<body onload="setSelectedSandi();" class='flex-center-col mx-6 my-8 bg-white font-Montserrat font-bold text-black'>
+
     <!-- Judul -->
     <h1 class='mb-10 font-black text-center text-black text-3xl md:text-4xl'>Translate Sandi</h1>
 
@@ -33,24 +34,23 @@
     </div>
 
     <!-- User Input & Output -->
-    <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96 text-black text-md md:text-lg'>
+    <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96 text-md md:text-lg'>
         <!-- User Input -->
         <textarea id='input' oninput='prepareInput();' spellcheck=false autocomplete='off' placeholder="Masukan kata" rows="10" 
-            class='w-full p-2 m-0 h-1/2 lg:h-3/4 overflow-y-auto resize-none focus:outline-none 
-            border-template text-inherit'></textarea>
+            class='w-full p-2 m-0 h-1/2 lg:h-3/4 overflow-y-auto resize-none focus:outline-none bg-transparent
+            border-template text-inherit pt-2'></textarea>
         
         <!-- Output -->
-        <div id='output' class='invisible w-full h-1/2 lg:h-3/4 p-2 bg-grey border-template'>
-            <p id='result' class='w-full h-3/4 lg:h-4/5 overflow-y-auto'>Hasil</p>
+        <div id='output' class='invisible lg:visible w-full h-1/2 lg:h-3/4 p-2 bg-white border-template'>
+            <textarea id='result' spellcheck=false autocomplete='off' readonly rows="10" 
+                class='w-full m-0 h-3/4 overflow-y-auto resize-none focus:outline-none bg-transparent
+                text-inherit'>Hasil</textarea>
             <button id='clip-btn' onclick='clipboardAction();' 
-                class='mt-2 lg:mt-1 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-unactive'>
+                class='invisible mt-2 lg:mt-2 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-unactive'>
                 <i class="far fa-clipboard"></i>
             </button>
         </div>
     </div>
-
-    <!-- Footer -->
-    <a href="https://github.com" class='mt-16 md:mt-32 lg:mt-16 mb-10 text-black text-md'>Source Code</a>
 
     <!-- Source Javascript -->
     <script src="./src/main.js"></script> 
