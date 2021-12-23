@@ -34,17 +34,16 @@
     </div>
 
     <!-- User Input & Output -->
-    <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96 text-md md:text-lg'>
+    <div class='flex-center-col lg:flex-row lg:items-start gap-2 w-full h-96 lg:h-72 md:h-96'>
         <!-- User Input -->
-        <textarea id='input' oninput='prepareInput();' spellcheck=false autocomplete='off' placeholder="Masukan kata" rows="10" 
-            class='w-full p-2 m-0 h-1/2 lg:h-3/4 overflow-y-auto resize-none focus:outline-none bg-transparent
-            border-template text-inherit pt-2'></textarea>
+        <textarea id='input' oninput='prepareInput();' spellcheck=false autocomplete='off' placeholder="Masukan kata" 
+            rows="10" class='textarea-general p-2 h-1/2 lg:h-3/4 border-template'></textarea>
         
         <!-- Output -->
         <div id='output' class='invisible lg:visible w-full h-1/2 lg:h-3/4 p-2 bg-white border-template'>
             <textarea id='result' spellcheck=false autocomplete='off' readonly rows="10" 
-                class='w-full m-0 h-3/4 overflow-y-auto resize-none focus:outline-none bg-transparent
-                text-inherit'>Hasil</textarea>
+                class='textarea-general h-3/4'>Hasil</textarea>
+
             <button id='clip-btn' onclick='clipboardAction();' 
                 class='invisible mt-2 lg:mt-2 px-2 py-0.5 float-right text-right text-xl md:text-2xl clipboard-unactive'>
                 <i class="far fa-clipboard"></i>

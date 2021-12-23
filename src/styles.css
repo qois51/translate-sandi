@@ -9,6 +9,15 @@
         @apply flex flex-col justify-center items-center;
     }
 
+    .border-template {
+        @apply border-2 border-black-less;
+    }
+
+    .textarea-general {
+        @apply w-full m-0 overflow-y-auto resize-none;
+        @apply focus:outline-none bg-transparent text-base md:text-lg;
+    }
+
     .dark-jenis-btn {
         @apply bg-black text-white;
         @apply hover:bg-black-less hover:text-white;
@@ -21,10 +30,6 @@
     .white-jenis-btn {
         @apply bg-white text-black;
         @apply hover:bg-black-less hover:text-white;
-    }
-
-    .border-template {
-        @apply border-2 border-black-less;
     }
 
     .clipboard-unactive {

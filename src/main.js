@@ -1,11 +1,17 @@
+const clipboard = document.getElementById('clip-btn').classList;
+const nonDropdownOption = document.getElementsByClassName('general-jenis-btn');
+const nonDropdownAn = document.getElementById('an');
+const nonDropdownAz = document.getElementById('az');
 const alfabetList = Array.from('abcdefghijklmnopqrstuvwxyz');
+const resultArea = document.getElementById('result');
 
 let selectedSandi = 'an'
 let userInput;
 let userInputType = [];       // Menyatakan type userInput, urutannya sesuai
 
 
-// Untuk bagian dropdown, tidak dispesifikasikan sebab akan bertukar posisi
+
+// Untuk bagian dropdown, tidak dispesifikasikan idnya sebab akan bertukar posisi
 function changeSelectedSandi(clickedId) {
     if (clickedId === 'an') {
         selectedSandi = 'an';
@@ -20,18 +26,12 @@ function changeSelectedSandi(clickedId) {
     }
 
     setSelectedSandi();
-
-    // Memulai proses kalimat, saat pergantiaan sandi
-    prepareInput();
+    prepareInput();     // Memulai proses kalimat, saat pergantiaan sandi
 }
 
 
 // Untuk non Dropdown, ini akan menukar class 'dark-jenis-btn' dan 'white-jenis-btn'
 function setSelectedSandi() {
-    const nonDropdownOption = document.getElementsByClassName('general-jenis-btn');
-    const nonDropdownAn = document.getElementById('an');
-    const nonDropdownAz = document.getElementById('az');
-
     // Set to default, yaitu 'white-jenis-btn'
     for (var i = 0; i < nonDropdownOption.length; i++) {
         nonDropdownOption[i].classList.remove('dark-jenis-btn');
@@ -47,13 +47,6 @@ function setSelectedSandi() {
     }
 
     switchDropdown();
-}
-
-
-// Expand dropdown
-function showDropdown() {
-    document.getElementById('dropdown-list').classList.add('block');        
-    document.getElementById('dropdown-list').classList.remove('hidden');        
 }
 
 
@@ -76,6 +69,13 @@ function switchDropdown() {
 }
 
 
+// Expand dropdown
+function showDropdown() {
+    document.getElementById('dropdown-list').classList.add('block');        
+    document.getElementById('dropdown-list').classList.remove('hidden');        
+}
+
+
 // Unfocus dropdown
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -87,23 +87,21 @@ window.onclick = function(event) {
 
 // Clipboard Action
 function clipboardAction() {
-    let clipboard = document.getElementById('clip-btn').classList;
     clipboard.add('clipboard-active');
     clipboard.remove('clipboard-unactive');
 
-    let result = document.getElementById('result').innerHTML;
-    let body = document.body;
-
     // Workaround untuk menyalin ke user clipboard
     // Membuat textarea sementara supaya bisa disalin
+    let body = document.body;
     let dummyarea = document.createElement('textarea');
     body.appendChild(dummyarea);
-    dummyarea.value = result;
+    dummyarea.value = resultArea.innerHTML;
     dummyarea.select();
 
     document.execCommand('copy');
     body.removeChild(dummyarea);
 }
+
 
 
 // Pre-Proses Kalimat
@@ -225,12 +223,12 @@ function postProses() {
     if (result != "") {
         output.add('visible', 'bg-grey');
         output.remove('invisible', 'bg-white');
-        document.getElementById('clip-btn').classList.add('visible');
-        document.getElementById('clip-btn').classList.remove('invisible');
-        document.getElementById('result').innerHTML = result;
+        clipboard.add('visible');
+        clipboard.remove('invisible');
+        resultArea.innerHTML = result;
     } else {
         output.add('invisible', 'bg-white');
         output.remove('visible', 'bg-grey');
-        document.getElementById('result').innerHTML = 'Hasil';
+        resultArea.innerHTML = 'Hasil';
     }
 }
