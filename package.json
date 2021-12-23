@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "tailwindcss -i ./src/styles.css -o ./dist/style.css --watch"
+    "watch": "tailwindcss -i ./src/styles.css -o ./dist/style.css --watch",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/style.css --minify"
   },
   "author": "Qois",
   "license": "ISC",

@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./**/*.html"],
+    content: ["./index.html", "./src/main.js"],
     theme: {
         extend: {
             fontFamily: {
@@ -13,5 +13,4 @@ module.exports = {
             },
         },
     },
-    plugins: [],
 }
