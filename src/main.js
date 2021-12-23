@@ -46,6 +46,10 @@ function setSelectedSandi() {
         nonDropdownAz.classList.remove('white-jenis-btn');
     }
 
+    // Reset clipboard button
+    clipboard.remove('clipboard-active');
+    clipboard.add('clipboard-unactive');
+
     switchDropdown();
 }
 
@@ -229,6 +233,8 @@ function postProses() {
     } else {
         output.add('invisible', 'bg-white');
         output.remove('visible', 'bg-grey');
+        clipboard.remove('visible');
+        clipboard.add('invisible');
         resultArea.innerHTML = 'Hasil';
     }
 }
