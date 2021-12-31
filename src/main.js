@@ -11,6 +11,13 @@ let userInputType = [];       // Menyatakan type userInput, urutannya sesuai
 
 
 
+// Reset Clipboard Button
+function resetClipboard() {
+    clipboard.remove('clipboard-active');
+    clipboard.add('clipboard-unactive');
+}
+
+
 // Untuk bagian dropdown, tidak dispesifikasikan idnya sebab akan bertukar posisi
 function changeSelectedSandi(clickedId) {
     if (clickedId === 'an') {
@@ -46,10 +53,7 @@ function setSelectedSandi() {
         nonDropdownAz.classList.remove('white-jenis-btn');
     }
 
-    // Reset clipboard button
-    clipboard.remove('clipboard-active');
-    clipboard.add('clipboard-unactive');
-
+    resetClipboard();
     switchDropdown();
 }
 
@@ -237,4 +241,6 @@ function postProses() {
         clipboard.add('invisible');
         resultArea.innerHTML = 'Hasil';
     }
+
+    resetClipboard();
 }
