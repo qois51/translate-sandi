@@ -19,23 +19,27 @@ a|b|c|d|e|f|g|h|i|j|k|l|m|                   a|b|c|d|e|f|g|h|i|j|k|l|m|
 n|o|p|q|r|s|t|u|v|w|x|y|z|  --> Dibalik -->  z|y|x|w|v|u|t|s|r|q|p|o|n|
 
 ```
-Melihat ilustrasi diatas penulis menamakan sandi AZ ini dengan julukan "Invers ROT13".
+Melihat ilustrasi diatas penulis menamakan sandi AZ ini dengan julukan "Backward ROT13".
 
 ## Algoritma
-Algoritma ini mengupamakan huruf menjadi angka, dimana huruf 'a' itu 1, huruf 'b' itu 2, dst. Setelah itu dimasukan rumus - rumus untuk mengubah angka tersebut menjadi angka yang lainnya yang sesuai dengan ROT13 atau Invers ROT13. Nanti hasil angka - angka tersebut diubah lagi menjadi alfabet.Berikut rumusnya :
+Setiap huruf yang ingin "ditranslate", direpresentasikan sebagai angka, sehingga a = 1, b = 2, c = 3, dan seterusnya. Angka - angka tersebut nantinya akan dimasukkan kedalam perhitungan untuk mentranslatenya menjadi ROT13 atau Backward ROT13. Hasil dari perhitungan akan didapatkan berupa angka. Angka hasil perhitungan tersebut akan diubah menjadi huruf lagi.
+
+Keterangan :
+x = Nomor Alfabet Input
+y = Nomor Alfabet Output (Hasil Translate yang nantinya akan menjadi hasil akhir)
 
 ### ROT13
 Rumus tergantung dengan kondisi dimana :
-* Jika nomor alfabet adalah x, dan jika x < 13, maka rumusnya :
+* Jika x < 13, maka rumusnya :
   ```
   y = x + 13
   ```
-* Jika nomor alfabet adalah x, dan jika x > 13, maka rumusnya :
+* Jika x > 13, maka rumusnya :
   ```
   y = x - 13
   ```
 
-### Invers ROT13 (Sandi AZ)
+### Backward ROT13 (Sandi AZ)
 Jika nomor alfabet adalah x, maka rumusnya :
 ```
 y = 26 - x
